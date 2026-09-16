@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>การศึกษา | My Portfolio</title>
+
+    <style>
+
+        /* ===== Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Arial", "Tahoma", sans-serif;
+            background: #0b1f33;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            width: 100%;
+            background: #102d47;
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d9ecff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #d9e9f7;
+
+            padding: 10px 16px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #28577d;
+            color: white;
+        }
+
+        /* เมนูหน้าปัจจุบัน */
+        .menu .active {
+            background: #397aa8;
+            color: white;
+        }
+
+
+        /* ===== Education Section ===== */
+
+        .education {
+            min-height: calc(100vh - 75px);
+
+            padding: 60px 8% 80px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(66, 135, 181, 0.20),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(47, 103, 146, 0.20),
+                    transparent 30%
+                ),
+
+                #0b1f33;
+        }
+
+
+        /* ===== Header ===== */
+
+        .education-header {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: auto;
+
+            margin-bottom: 55px;
+        }
+
+        .education-icon {
+            font-size: 48px;
+
+            margin-bottom: 12px;
+        }
+
+        .education-header h1 {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .education-header h1 span {
+            color: #8dc8f5;
+        }
+
+        .education-header p {
+            color: #bfd3e2;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ===== Timeline ===== */
+
+        .timeline {
+            position: relative;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        /* เส้นตรงกลาง */
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 3px;
+
+            background: #397aa8;
+
+            transform: translateX(-50%);
+
+            border-radius: 10px;
+        }
+
+
+        /* ===== Timeline Item ===== */
+
+        .timeline-item {
+            width: 50%;
+
+            padding: 15px 40px;
+
+            position: relative;
+        }
+
+
+        /* ซ้าย */
+
+        .timeline-item.left {
+            left: 0;
+
+            text-align: right;
+        }
+
+
+        /* ขวา */
+
+        .timeline-item.right {
+            left: 50%;
+
+            text-align: left;
+        }
+
+
+        /* ===== จุด Timeline ===== */
+
+        .timeline-dot {
+            position: absolute;
+
+            width: 18px;
+            height: 18px;
+
+            background: #8dc8f5;
+
+            border: 4px solid #102d47;
+
+            border-radius: 50%;
+
+            top: 35px;
+
+            z-index: 5;
+
+            box-shadow:
+                0 0 0 3px rgba(141, 200, 245, 0.15);
+        }
+
+        .left .timeline-dot {
+            right: -9px;
+        }
+
+        .right .timeline-dot {
+            left: -9px;
+        }
+
+
+        /* ===== Education Card ===== */
+
+        .education-card {
+            background: rgba(20, 52, 78, 0.90);
+
+            border: 1px solid rgba(141, 200, 245, 0.16);
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.20);
+
+            transition: 0.35s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+
+            background: rgba(31, 72, 104, 0.95);
+
+            border-color:
+                rgba(141, 200, 245, 0.35);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.30);
+        }
+
+
+        .education-card .icon {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .education-card h2 {
+            color: #dcefff;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .education-card h3 {
+            color: #8dc8f5;
+
+            font-size: 17px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .education-card p {
+            color: #bfd1df;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ===== University Card ===== */
+
+        .university {
+            max-width: 1000px;
+
+            margin: 50px auto 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35, 81, 116, 0.95),
+                    rgba(15, 45, 70, 0.95)
+                );
+
+            border: 1px solid rgba(141, 200, 245, 0.25);
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* ===== University Logo ===== */
+
+        .university-logo {
+            width: 130px;
+            height: 130px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 12px;
+
+            flex-shrink: 0;
+        }
+
+        .university-logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+
+        /* ===== University Text ===== */
+
+        .university-text {
+            max-width: 600px;
+        }
+
+        .university-text .small-title {
+            color: #8dc8f5;
+
+            font-size: 15px;
+
+            margin-bottom: 8px;
+        }
+
+        .university-text h2 {
+            font-size: 26px;
+
+            margin-bottom: 12px;
+
+            color: #ffffff;
+        }
+
+        .university-text h3 {
+            font-size: 19px;
+
+            color: #bfe0f5;
+
+            margin-bottom: 12px;
+        }
+
+        .university-text p {
+            color: #bfd1df;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+
+        /* ===== Next Button ===== */
+
+        .next-section {
+            text-align: center;
+
+            margin-top: 55px;
+        }
+
+        .next-section p {
+            color: #a9c5d8;
+
+            margin-bottom: 18px;
+
+            font-size: 16px;
+        }
+
+        .next-btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #397aa8;
+
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 11px;
+
+            font-size: 17px;
+
+            box-shadow:
+                0 7px 20px rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .next-btn:hover {
+            background: #5797c2;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* ===== Decorative Emojis ===== */
+
+        .decoration {
+            position: fixed;
+
+            font-size: 65px;
+
+            opacity: 0.06;
+
+            pointer-events: none;
+        }
+
+        .deco1 {
+            top: 140px;
+            left: 25px;
+        }
+
+        .deco2 {
+            bottom: 40px;
+            right: 35px;
+        }
+
+
+        /* ===== Responsive ===== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+
+                padding: 15px 20px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            /* Timeline กลับเป็นด้านเดียว */
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item,
+            .timeline-item.left,
+            .timeline-item.right {
+                width: 100%;
+
+                left: 0;
+
+                text-align: left;
+
+                padding-left: 50px;
+
+                padding-right: 0;
+            }
+
+            .left .timeline-dot,
+            .right .timeline-dot {
+                left: 6px;
+
+                right: auto;
+            }
+
+
+            /* University */
+
+            .university {
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 30px 20px;
+            }
+
+            .university-text {
+                max-width: 100%;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .education {
+                padding: 45px 20px 60px;
+            }
+
+            .education-header h1 {
+                font-size: 31px;
+            }
+
+            .education-header p {
+                font-size: 16px;
+            }
+
+            .education-card {
+                padding: 21px;
+            }
+
+            .university-logo {
+                width: 110px;
+                height: 110px;
+            }
+
+            .university-text h2 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         Navigation
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            📷 My Portfolio
+        </div>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    หน้าแรก
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    เกี่ยวกับฉัน
+                </a>
+            </li>
+
+            <li>
+                <a href="education.html" class="active">
+                    การศึกษา
+                </a>
+            </li>
+
+            <li>
+                <a href="works.html">
+                    ผลงาน
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    ติดต่อฉัน
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         Decorative Emojis
+    ========================== -->
+
+    <div class="decoration deco1">
+        📚
+    </div>
+
+    <div class="decoration deco2">
+        🎓
+    </div>
+
+
+    <!-- =========================
+         Education
+    ========================== -->
+
+    <section class="education">
+
+
+        <!-- Header -->
+
+        <div class="education-header">
+
+            <div class="education-icon">
+                📚🎓✨
+            </div>
+
+            <h1>
+                ประวัติ<span>การศึกษา</span>
+            </h1>
+
+            <p>
+                เส้นทางการเรียนรู้และการศึกษาของฉัน
+                <br>
+                ตั้งแต่ระดับอนุบาลจนถึงเป้าหมายในระดับมหาวิทยาลัย
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             Timeline
+        ========================== -->
+
+        <div class="timeline">
+
+
+            <!-- อนุบาล -->
+
+            <div class="timeline-item left">
+
+                <div class="timeline-dot"></div>
+
+                <div class="education-card">
+
+                    <div class="icon">
+                        🧸
+                    </div>
+
+                    <h2>
+                        ระดับอนุบาล
+                    </h2>
+
+                    <h3>
+                        โรงเรียนของฉัน
+                    </h3>
+
+                    <p>
+                        ศึกษาระดับอนุบาลและเริ่มต้นเรียนรู้
+                        การใช้ชีวิตร่วมกับผู้อื่น
+                        รวมถึงพัฒนาทักษะพื้นฐานต่าง ๆ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ประถม -->
+
+            <div class="timeline-item right">
+
+                <div class="timeline-dot"></div>
+
+                <div class="education-card">
+
+                    <div class="icon">
+                        📖
+                    </div>
+
+                    <h2>
+                        ระดับประถมศึกษา
+                    </h2>
+
+                    <h3>
+                        โรงเรียนของฉัน
+                    </h3>
+
+                    <p>
+                        ศึกษาระดับประถมศึกษา
+                        ได้เรียนรู้พื้นฐานด้านวิชาการ
+                        และพัฒนาทักษะการเรียนรู้
+                        อย่างต่อเนื่อง
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ม.ต้น -->
+
+            <div class="timeline-item left">
+
+                <div class="timeline-dot"></div>
+
+                <div class="education-card">
+
+                    <div class="icon">
+                        📝
+                    </div>
+
+                    <h2>
+                        ระดับมัธยมศึกษาตอนต้น
+                    </h2>
+
+                    <h3>
+                        โรงเรียนของฉัน
+                    </h3>
+
+                    <p>
+                        เริ่มค้นพบความสนใจและความถนัด
+                        ของตัวเองมากขึ้น
+                        พร้อมพัฒนาทักษะด้านต่าง ๆ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ม.ปลาย -->
+
+            <div class="timeline-item right">
+
+                <div class="timeline-dot"></div>
+
+                <div class="education-card">
+
+                    <div class="icon">
+                        📚✨
+                    </div>
+
+                    <h2>
+                        ระดับมัธยมศึกษาตอนปลาย
+                    </h2>
+
+                    <h3>
+                        โรงเรียนของฉัน
+                    </h3>
+
+                    <p>
+                        มุ่งเน้นการพัฒนาความรู้
+                        และทักษะที่สนใจ
+                        เพื่อเตรียมความพร้อม
+                        สำหรับการศึกษาต่อในระดับมหาวิทยาลัย
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             University
+        ========================== -->
+
+        <div class="university">
+
+
+            <!-- โลโก้มหาวิทยาลัย -->
+
+            <div class="university-logo">
+
+                <!--
+                    เปลี่ยน university-logo.png
+                    เป็นไฟล์ตรามหาวิทยาลัยของคุณ
+                -->
+
+                <img
+                    src="university-logo.png"
+                    alt="ตรามหาวิทยาลัย"
+                >
+
+            </div>
+
+
+            <!-- ข้อมูลมหาวิทยาลัย -->
+
+            <div class="university-text">
+
+                <div class="small-title">
+                    
+
+                <h2>
+                    มหาวิทยาลัยที่อยากเข้า
+                </h2>
+
+                <h3>
+                    🏛️ จุฬาลงกรณ์มหาวิทยาลัย
+                </h3>
+
+                <p>
+                    คณะที่อยากเข้า :
+                    <strong>
+                        คณะนิเทศศาสตร์
+                    </strong>
+
+                    <br><br>
+
+                    สาขาที่สนใจ :
+                    <strong>
+                        สาขาสื่อสารการแสดง
+                    </strong>
+
+            
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             Next Page
+        ========================== -->
+
+        <div class="next-section">
+
+            <p>
+                มาดูสิ่งที่ฉันได้เรียนรู้และสร้างสรรค์กันต่อเลย! 🏆✨
+            </p>
+
+            <a
+                href="works.html"
+                class="next-btn"
+            >
+                ดูผลงานของฉัน →
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</body>
+</html>
