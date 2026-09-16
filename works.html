@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio | My Profile</title>
+    <title>ผลงาน | My Portfolio</title>
 
     <style>
+
+        /* ===== Reset ===== */
         * {
             margin: 0;
             padding: 0;
@@ -20,15 +22,24 @@
             min-height: 100vh;
         }
 
+
         /* ===== Navigation ===== */
+
         nav {
             width: 100%;
             background: #102d47;
+
             padding: 18px 40px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
@@ -39,15 +50,18 @@
 
         .menu {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             list-style: none;
         }
 
         .menu a {
             text-decoration: none;
             color: #d9e9f7;
+
             padding: 10px 16px;
+
             border-radius: 8px;
+
             transition: 0.3s;
         }
 
@@ -56,214 +70,631 @@
             color: white;
         }
 
-        /* ===== Hero ===== */
-        .hero {
+        /* เมนูหน้าปัจจุบัน */
+
+        .menu .active {
+            background: #397aa8;
+            color: white;
+        }
+
+
+        /* ===== Works Section ===== */
+
+        .works {
             min-height: calc(100vh - 75px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 8%;
+
+            padding: 60px 8% 80px;
+
             background:
-                radial-gradient(circle at 15% 20%, rgba(66, 135, 181, 0.20), transparent 30%),
-                radial-gradient(circle at 85% 80%, rgba(47, 103, 146, 0.18), transparent 30%),
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(66, 135, 181, 0.20),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(47, 103, 146, 0.20),
+                    transparent 30%
+                ),
+
                 #0b1f33;
         }
 
-        .hero-container {
-            max-width: 1100px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 70px;
+
+        /* ===== Header ===== */
+
+        .works-header {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: auto;
+
+            margin-bottom: 45px;
         }
 
-        /* ===== Text ===== */
-        .hero-text {
-            flex: 1;
+        .works-icon {
+            font-size: 50px;
+
+            margin-bottom: 12px;
         }
 
-        .emoji {
-            font-size: 38px;
-            margin-bottom: 15px;
-            letter-spacing: 8px;
-        }
-
-        .hero-text h1 {
+        .works-header h1 {
             font-size: 42px;
-            line-height: 1.3;
-            margin-bottom: 18px;
-            color: #ffffff;
+
+            margin-bottom: 15px;
         }
 
-        .hero-text h1 span {
+        .works-header h1 span {
             color: #8dc8f5;
         }
 
-        .hero-text p {
-            font-size: 19px;
+        .works-header p {
+            color: #bfd3e2;
+
+            font-size: 18px;
+
             line-height: 1.8;
-            color: #c4d6e5;
-            margin-bottom: 28px;
         }
 
-        /* ===== Button ===== */
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            background: #397aa8;
-            color: white;
-            padding: 13px 25px;
-            border-radius: 10px;
-            font-size: 17px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+        /* ===== Main Work ===== */
+
+        .work-card {
+            max-width: 1050px;
+
+            margin: auto;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(22, 59, 88, 0.96),
+                    rgba(13, 39, 61, 0.96)
+                );
+
+            border: 1px solid rgba(141, 200, 245, 0.20);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: stretch;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.30);
+
+            transition: 0.35s;
         }
 
-        .btn:hover {
-            background: #5797c2;
-            transform: translateY(-3px);
+        .work-card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(141, 200, 245, 0.40);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.35);
         }
 
-        /* ===== Profile Image ===== */
-        .profile-box {
-            width: 280px;
-            flex-shrink: 0;
-            text-align: center;
+
+        /* ===== Work Image ===== */
+
+        .work-image {
+            width: 52%;
+
+            min-height: 420px;
+
+            background: #163b58;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
         }
 
-        .profile-box img {
-            width: 260px;
-            height: 300px;
+        .work-image img {
+            width: 100%;
+
+            height: 370px;
+
             object-fit: cover;
-            border-radius: 22px;
-            border: 5px solid #477c9f;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+
+            border-radius: 16px;
+
+            border: 4px solid #477c9f;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.30);
         }
 
-        .profile-caption {
-            margin-top: 15px;
-            color: #a9c9df;
+
+        /* ===== Work Details ===== */
+
+        .work-content {
+            width: 48%;
+
+            padding: 45px 40px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .work-number {
+            display: inline-block;
+
+            color: #8dc8f5;
+
+            font-size: 15px;
+
+            margin-bottom: 12px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .work-content h2 {
+            font-size: 30px;
+
+            color: #ffffff;
+
+            margin-bottom: 18px;
+
+            line-height: 1.4;
+        }
+
+
+        .work-content h2 span {
+            color: #8dc8f5;
+        }
+
+
+        .work-content p {
+            color: #c1d3df;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ===== Work Information ===== */
+
+        .work-info {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            margin-bottom: 22px;
+        }
+
+        .work-info-item {
+            background: rgba(5, 25, 42, 0.45);
+
+            padding: 11px 14px;
+
+            border-radius: 9px;
+
+            color: #c8dce9;
+
             font-size: 15px;
         }
 
-        /* ===== Photography Decorations ===== */
-        .camera-decoration {
-            position: absolute;
-            opacity: 0.12;
-            font-size: 80px;
+        .work-info-item strong {
+            color: #8dc8f5;
         }
 
-        .camera1 {
-            top: 130px;
-            left: 40px;
+
+        /* ===== Photography Tags ===== */
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 10px;
         }
 
-        .camera2 {
-            bottom: 40px;
-            right: 50px;
+        .tag {
+            background: #234e70;
+
+            color: #d8edfa;
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
         }
+
+
+        /* ===== Bottom Message ===== */
+
+        .work-message {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 45px auto 0;
+        }
+
+        .work-message p {
+            color: #a9c5d8;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ===== Next Button ===== */
+
+        .next-section {
+            text-align: center;
+
+            margin-top: 30px;
+        }
+
+        .next-btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #397aa8;
+
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 11px;
+
+            font-size: 17px;
+
+            box-shadow:
+                0 7px 20px rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .next-btn:hover {
+            background: #5797c2;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* ===== Decorative Emojis ===== */
+
+        .decoration {
+            position: fixed;
+
+            font-size: 70px;
+
+            opacity: 0.06;
+
+            pointer-events: none;
+        }
+
+        .deco1 {
+            top: 140px;
+            left: 25px;
+        }
+
+        .deco2 {
+            bottom: 35px;
+            right: 35px;
+        }
+
+        .deco3 {
+            top: 45%;
+            right: 25px;
+        }
+
 
         /* ===== Responsive ===== */
+
         @media (max-width: 850px) {
 
             nav {
-                padding: 15px 20px;
                 flex-direction: column;
-                gap: 12px;
+
+                gap: 15px;
+
+                padding: 15px 20px;
             }
 
             .menu {
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
-            .hero-container {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 35px;
+
+            .work-card {
+                flex-direction: column;
             }
 
-            .hero-text h1 {
-                font-size: 32px;
+            .work-image {
+                width: 100%;
+
+                min-height: auto;
+
+                padding: 20px;
             }
 
-            .hero-text p {
-                font-size: 17px;
+            .work-image img {
+                height: 300px;
             }
 
-            .profile-box img {
-                width: 220px;
-                height: 250px;
+            .work-content {
+                width: 100%;
+
+                padding: 30px 25px;
             }
+
+            .works-header h1 {
+                font-size: 34px;
+            }
+
         }
+
+
+        @media (max-width: 550px) {
+
+            .works {
+                padding: 45px 20px 60px;
+            }
+
+            .works-header h1 {
+                font-size: 30px;
+            }
+
+            .works-header p {
+                font-size: 16px;
+            }
+
+            .work-image img {
+                height: 230px;
+            }
+
+            .work-content h2 {
+                font-size: 25px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- ===== Navigation ===== -->
+
+    <!-- =========================
+         Navigation
+    ========================== -->
+
     <nav>
-        <div class="logo">📷 My Portfolio</div>
+
+        <div class="logo">
+            📷 My Portfolio
+        </div>
+
 
         <ul class="menu">
-            <li><a href="index.html">หน้าแรก</a></li>
-            <li><a href="about.html">เกี่ยวกับฉัน</a></li>
-            <li><a href="education.html">การศึกษา</a></li>
-            <li><a href="works.html">ผลงาน</a></li>
-            <li><a href="contact.html">ติดต่อฉัน</a></li>
+
+            <li>
+                <a href="index.html">
+                    หน้าแรก
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    เกี่ยวกับฉัน
+                </a>
+            </li>
+
+            <li>
+                <a href="education.html">
+                    การศึกษา
+                </a>
+            </li>
+
+            <li>
+                <a href="works.html" class="active">
+                    ผลงาน
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    ติดต่อฉัน
+                </a>
+            </li>
+
         </ul>
+
     </nav>
 
-    <!-- ===== Decorative Emojis ===== -->
-    <div class="camera-decoration camera1">📷</div>
-    <div class="camera-decoration camera2">📸</div>
 
-    <!-- ===== Home / Profile ===== -->
-    <section class="hero">
+    <!-- =========================
+         Decorative Emojis
+    ========================== -->
 
-        <div class="hero-container">
+    <div class="decoration deco1">
+        📷
+    </div>
 
-            <div class="hero-text">
+    <div class="decoration deco2">
+        🏆
+    </div>
 
-                <div class="emoji">
-                    📷 📸 🎞️ 🔭
-                </div>
+    <div class="decoration deco3">
+        🎨
+    </div>
 
-                <h1>
-                    ยินดีต้อนรับสู่เว็บไซต์<br>
-                    <span>Portfolio ของฉัน</span>
-                </h1>
 
-                <p>
-                    เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! ✨
-                    <br>
-                    เว็บไซต์นี้รวบรวมข้อมูลเกี่ยวกับตัวฉัน
-                    การศึกษา ผลงาน และช่องทางการติดต่อ
-                </p>
+    <!-- =========================
+         Works
+    ========================== -->
 
-                <!-- ปุ่มไปหน้าถัดไป -->
-                <a href="about.html" class="btn">
-                    ทำความรู้จักฉันเพิ่มเติม → 👋
-                </a>
+    <section class="works">
+
+
+        <!-- Header -->
+
+        <div class="works-header">
+
+            <div class="works-icon">
+                🏆📸✨
+            </div>
+
+            <h1>
+                ผลงานที่<span>ภาคภูมิใจ</span>
+            </h1>
+
+            <p>
+                หนึ่งในผลงานที่ฉันตั้งใจสร้างสรรค์
+                <br>
+                และเป็นผลงานที่แสดงถึงความสามารถ
+                และความสนใจของฉัน
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             Main Work
+        ========================== -->
+
+        <div class="work-card">
+
+
+            <!-- ===== Work Image ===== -->
+
+            <div class="work-image">
+
+                <!--
+                    เปลี่ยนชื่อไฟล์
+                    work.jpg
+                    เป็นรูปผลงานของคุณ
+                -->
+
+                <img
+                    src="work.jpg"
+                    alt="ผลงานที่ภาคภูมิใจของฉัน"
+                >
 
             </div>
 
-            <!-- ===== Profile Picture ===== -->
-            <div class="profile-box">
 
-                <!-- เปลี่ยน profile.jpg เป็นรูปของคุณ -->
-                <img src="profile.jpg" alt="รูปโปรไฟล์ของฉัน">
+            <!-- ===== Work Details ===== -->
 
-                <div class="profile-caption">
-                    📸 Welcome to my Portfolio
+            <div class="work-content">
+
+                <span class="work-number">
+                    ✦ MY PROUD WORK #01
+                </span>
+
+
+                <h2>
+                    ชื่อ<span>ผลงานของฉัน</span>
+                </h2>
+
+
+                <p>
+                    ผลงานชิ้นนี้เป็นผลงานที่ฉันภาคภูมิใจ
+                    เพราะได้ใช้ทั้งความคิดสร้างสรรค์
+                    ความรู้ และความตั้งใจในการสร้างผลงาน
+                    ตั้งแต่เริ่มต้นจนสำเร็จ
+                </p>
+
+
+                <!-- ข้อมูลผลงาน -->
+
+                <div class="work-info">
+
+                    <div class="work-info-item">
+                        <strong>📅 วันที่ :</strong>
+                        เดือน / ปี
+                    </div>
+
+                    
+                </div>
+
+
+                <!-- Tags -->
+
+                <div class="tags">
+
+                    <span class="tag">
+                        📷 Photography
+                    </span>
+
+                    <span class="tag">
+                        🎨 Creative
+                    </span>
+
+                    <span class="tag">
+                        ✨ Portfolio
+                    </span>
+
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- =========================
+             Message
+        ========================== -->
+
+        <div class="work-message">
+
+            <p>
+                ทุกผลงานคือประสบการณ์ที่ทำให้ฉันได้เรียนรู้
+                และพัฒนาตัวเองให้ดีขึ้นเรื่อย ๆ
+                🌱📸
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             Next Page
+        ========================== -->
+
+        <div class="next-section">
+
+            <a
+                href="contact.html"
+                class="next-btn"
+            >
+                ไปดูช่องทางการติดต่อ →
+            </a>
+
+        </div>
+
+
     </section>
+
 
 </body>
 </html>
