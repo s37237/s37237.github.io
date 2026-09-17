@@ -22,13 +22,10 @@
             min-height: 100vh;
         }
 
-
         /* ===== Navigation ===== */
-
         nav {
             width: 100%;
             background: #102d47;
-
             padding: 18px 40px;
 
             display: flex;
@@ -70,16 +67,12 @@
             color: white;
         }
 
-        /* เมนูหน้าปัจจุบัน */
-
         .menu .active {
             background: #397aa8;
             color: white;
         }
 
-
         /* ===== Works Section ===== */
-
         .works {
             min-height: calc(100vh - 75px);
 
@@ -101,9 +94,7 @@
                 #0b1f33;
         }
 
-
         /* ===== Header ===== */
-
         .works-header {
             text-align: center;
 
@@ -116,13 +107,11 @@
 
         .works-icon {
             font-size: 50px;
-
             margin-bottom: 12px;
         }
 
         .works-header h1 {
             font-size: 42px;
-
             margin-bottom: 15px;
         }
 
@@ -138,13 +127,20 @@
             line-height: 1.8;
         }
 
-
-        /* ===== Main Work ===== */
-
-        .work-card {
-            max-width: 1050px;
-
+        /* ===== Activities Container ===== */
+        .activities {
+            max-width: 1100px;
             margin: auto;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 35px;
+        }
+
+        /* ===== Activity Card ===== */
+        .work-card {
+            width: 100%;
 
             background:
                 linear-gradient(
@@ -179,13 +175,11 @@
                 0 20px 45px rgba(0, 0, 0, 0.35);
         }
 
-
         /* ===== Work Image ===== */
-
         .work-image {
-            width: 52%;
+            width: 48%;
 
-            min-height: 420px;
+            min-height: 380px;
 
             background: #163b58;
 
@@ -201,7 +195,7 @@
         .work-image img {
             width: 100%;
 
-            height: 370px;
+            height: 330px;
 
             object-fit: cover;
 
@@ -213,13 +207,11 @@
                 0 10px 25px rgba(0, 0, 0, 0.30);
         }
 
-
         /* ===== Work Details ===== */
-
         .work-content {
-            width: 48%;
+            width: 52%;
 
-            padding: 45px 40px;
+            padding: 40px;
 
             display: flex;
 
@@ -227,7 +219,6 @@
 
             justify-content: center;
         }
-
 
         .work-number {
             display: inline-block;
@@ -241,9 +232,8 @@
             letter-spacing: 1px;
         }
 
-
         .work-content h2 {
-            font-size: 30px;
+            font-size: 28px;
 
             color: #ffffff;
 
@@ -252,11 +242,9 @@
             line-height: 1.4;
         }
 
-
         .work-content h2 span {
             color: #8dc8f5;
         }
-
 
         .work-content p {
             color: #c1d3df;
@@ -268,9 +256,7 @@
             margin-bottom: 20px;
         }
 
-
         /* ===== Work Information ===== */
-
         .work-info {
             display: flex;
 
@@ -278,7 +264,7 @@
 
             gap: 10px;
 
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .work-info-item {
@@ -297,9 +283,7 @@
             color: #8dc8f5;
         }
 
-
-        /* ===== Photography Tags ===== */
-
+        /* ===== Tags ===== */
         .tags {
             display: flex;
 
@@ -307,7 +291,7 @@
 
             gap: 8px;
 
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .tag {
@@ -322,15 +306,13 @@
             font-size: 13px;
         }
 
-
-        /* ===== Bottom Message ===== */
-
+        /* ===== Message ===== */
         .work-message {
             text-align: center;
 
             max-width: 750px;
 
-            margin: 45px auto 0;
+            margin: 50px auto 0;
         }
 
         .work-message p {
@@ -341,9 +323,7 @@
             line-height: 1.8;
         }
 
-
         /* ===== Next Button ===== */
-
         .next-section {
             text-align: center;
 
@@ -377,9 +357,7 @@
             transform: translateY(-4px);
         }
 
-
         /* ===== Decorative Emojis ===== */
-
         .decoration {
             position: fixed;
 
@@ -405,9 +383,7 @@
             right: 25px;
         }
 
-
         /* ===== Responsive ===== */
-
         @media (max-width: 850px) {
 
             nav {
@@ -423,7 +399,6 @@
 
                 justify-content: center;
             }
-
 
             .work-card {
                 flex-direction: column;
@@ -450,9 +425,7 @@
             .works-header h1 {
                 font-size: 34px;
             }
-
         }
-
 
         @media (max-width: 550px) {
 
@@ -475,15 +448,12 @@
             .work-content h2 {
                 font-size: 25px;
             }
-
         }
 
     </style>
 </head>
 
-
 <body>
-
 
     <!-- =========================
          Navigation
@@ -494,7 +464,6 @@
         <div class="logo">
             📷 My Portfolio
         </div>
-
 
         <ul class="menu">
 
@@ -556,7 +525,6 @@
 
     <section class="works">
 
-
         <!-- Header -->
 
         <div class="works-header">
@@ -566,98 +534,377 @@
             </div>
 
             <h1>
-                ผลงานที่<span>ภาคภูมิใจ</span>
+                ผลงานและ<span>กิจกรรมของฉัน</span>
             </h1>
 
             <p>
-                หนึ่งในผลงานที่ฉันตั้งใจสร้างสรรค์
+                รวมผลงานและกิจกรรมที่ฉันได้เข้าร่วม
                 <br>
-                และเป็นผลงานที่แสดงถึงความสามารถ
-                และความสนใจของฉัน
+                ซึ่งแต่ละกิจกรรมช่วยให้ฉันได้เรียนรู้
+                และพัฒนาทักษะใหม่ ๆ
             </p>
 
         </div>
 
 
         <!-- =========================
-             Main Work
+             Activities
         ========================== -->
 
-        <div class="work-card">
+        <div class="activities">
 
 
-            <!-- ===== Work Image ===== -->
+            <!-- ===== กิจกรรมที่ 1 ===== -->
 
-            <div class="work-image">
+            <div class="work-card">
 
-                <!--
-                    เปลี่ยนชื่อไฟล์
-                    work.jpg
-                    เป็นรูปผลงานของคุณ
-                -->
+                <div class="work-image">
 
-                <img
-                    src="https://raw.githubusercontent.com/s37237/images/main/IMG_0245.jpeg"
-                    alt="ผลงานที่ภาคภูมิใจของฉัน"
-                >
+                    <!-- ใส่รูปกิจกรรมที่ 1 ตรงนี้ -->
 
-            </div>
+                    <img
+                        src="https://raw.githubusercontent.com/s37237/images/main/IMG_0245.jpeg"
+                        alt="กิจกรรมที่ 1"
+                    >
 
+                </div>
 
-            <!-- ===== Work Details ===== -->
+                <div class="work-content">
 
-            <div class="work-content">
+                    <span class="work-number">
+                        ✦ ACTIVITY #01
+                    </span>
 
-                <span class="work-number">
-                    ✦ MY PROUD WORK #01
-                </span>
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>TO BE NUMBER ONE DANCERCISE รุ่น Teenage</span>
+                    </h2>
 
+                    <p>
+                        กิจกรรมที่ฉันได้เข้าร่วมและมีส่วนร่วมในการทำงานเป็นทีม
+                        ได้เรียนรู้เรื่องความสามัคคี การแก้ไขปัญหาเฉพาะหน้า
+                        รวมถึงการเป็นผู้นำและผู้สนับสนุนสมาชิกในทีม
+                    </p>
 
-                <h2>
-                    ชื่อ<span>TO BE NUMBER ONE DANCERCISE รุ่น teenage</span>
-                </h2>
+                    <div class="work-info">
 
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            23 / 08 / 68
+                        </div>
 
-                <p>
-                    ผลงานชิ้นนี้เป็นผลงานที่ฉันภาคภูมิใจ
-                    เพราะได้ใช้ทั้งความสามัคคี
-                    การทำงานเป็นทีม การแก้ไขปัญหาเฉพาะหน้า
-                    การเป็นผู้นำและผู้ซัพพอร์ต
-                </p>
-
-
-                <!-- ข้อมูลผลงาน -->
-
-                <div class="work-info">
-
-                    <div class="work-info-item">
-                        <strong>📅 วันที่ :</strong>
-                       23/ 08 / 68
                     </div>
 
-                    
-                </div>
+                    <div class="tags">
 
+                        <span class="tag">
+                            🤝 Teamwork
+                        </span>
 
-                <!-- Tags -->
+                        <span class="tag">
+                            💃 Dance
+                        </span>
 
-                <div class="tags">
+                        <span class="tag">
+                            ✨ Activity
+                        </span>
 
-                    <span class="tag">
-                        📷 Photography
-                    </span>
-
-                    <span class="tag">
-                        🎨 Creative
-                    </span>
-
-                    <span class="tag">
-                        ✨ Portfolio
-                    </span>
+                    </div>
 
                 </div>
 
             </div>
+
+
+            <!-- ===== กิจกรรมที่ 2 ===== -->
+
+            <div class="work-card">
+
+                <div class="work-image">
+
+                    <!-- เปลี่ยนลิงก์รูปตรงนี้ -->
+
+                    <img
+                        src="ใส่ลิงก์รูปกิจกรรมที่ 2"
+                        alt="กิจกรรมที่ 2"
+                    >
+
+                </div>
+
+                <div class="work-content">
+
+                    <span class="work-number">
+                        ✦ ACTIVITY #02
+                    </span>
+
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>ชื่อกิจกรรมที่ 2</span>
+                    </h2>
+
+                    <p>
+                        เขียนรายละเอียดเกี่ยวกับกิจกรรมที่ 2
+                        เช่น สิ่งที่ได้ทำ หน้าที่ที่ได้รับ
+                        และสิ่งที่ได้เรียนรู้จากกิจกรรมนี้
+                    </p>
+
+                    <div class="work-info">
+
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            ใส่วันที่
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ✨ Activity
+                        </span>
+
+                        <span class="tag">
+                            🤝 Teamwork
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== กิจกรรมที่ 3 ===== -->
+
+            <div class="work-card">
+
+                <div class="work-image">
+
+                    <!-- เปลี่ยนลิงก์รูปตรงนี้ -->
+
+                    <img
+                        src="ใส่ลิงก์รูปกิจกรรมที่ 3"
+                        alt="กิจกรรมที่ 3"
+                    >
+
+                </div>
+
+                <div class="work-content">
+
+                    <span class="work-number">
+                        ✦ ACTIVITY #03
+                    </span>
+
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>ชื่อกิจกรรมที่ 3</span>
+                    </h2>
+
+                    <p>
+                        เขียนรายละเอียดเกี่ยวกับกิจกรรมที่ 3
+                        และอธิบายประสบการณ์หรือทักษะที่ได้รับ
+                        จากการเข้าร่วมกิจกรรม
+                    </p>
+
+                    <div class="work-info">
+
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            ใส่วันที่
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            🎨 Creative
+                        </span>
+
+                        <span class="tag">
+                            🌱 Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== กิจกรรมที่ 4 ===== -->
+
+            <div class="work-card">
+
+                <div class="work-image">
+
+                    <!-- เปลี่ยนลิงก์รูปตรงนี้ -->
+
+                    <img
+                        src="ใส่ลิงก์รูปกิจกรรมที่ 4"
+                        alt="กิจกรรมที่ 4"
+                    >
+
+                </div>
+
+                <div class="work-content">
+
+                    <span class="work-number">
+                        ✦ ACTIVITY #04
+                    </span>
+
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>ชื่อกิจกรรมที่ 4</span>
+                    </h2>
+
+                    <p>
+                        เขียนรายละเอียดเกี่ยวกับกิจกรรมที่ 4
+                        พร้อมบอกหน้าที่หรือบทบาทของตัวเอง
+                        และสิ่งที่ได้รับจากกิจกรรม
+                    </p>
+
+                    <div class="work-info">
+
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            ใส่วันที่
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            🏆 Achievement
+                        </span>
+
+                        <span class="tag">
+                            💡 Learning
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== กิจกรรมที่ 5 ===== -->
+
+            <div class="work-card">
+
+                <div class="work-image">
+
+                    <!-- เปลี่ยนลิงก์รูปตรงนี้ -->
+
+                    <img
+                        src="ใส่ลิงก์รูปกิจกรรมที่ 5"
+                        alt="กิจกรรมที่ 5"
+                    >
+
+                </div>
+
+                <div class="work-content">
+
+                    <span class="work-number">
+                        ✦ ACTIVITY #05
+                    </span>
+
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>ชื่อกิจกรรมที่ 5</span>
+                    </h2>
+
+                    <p>
+                        เขียนรายละเอียดเกี่ยวกับกิจกรรมที่ 5
+                        เช่น ประสบการณ์ที่ได้รับ
+                        ความรู้ใหม่ ๆ และทักษะที่ได้พัฒนา
+                    </p>
+
+                    <div class="work-info">
+
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            ใส่วันที่
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            📚 Learning
+                        </span>
+
+                        <span class="tag">
+                            🌟 Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== กิจกรรมที่ 6 ===== -->
+
+            <div class="work-card">
+
+                <div class="work-image">
+
+                    <!-- เปลี่ยนลิงก์รูปตรงนี้ -->
+
+                    <img
+                        src="ใส่ลิงก์รูปกิจกรรมที่ 6"
+                        alt="กิจกรรมที่ 6"
+                    >
+
+                </div>
+
+                <div class="work-content">
+
+                    <span class="work-number">
+                        ✦ ACTIVITY #06
+                    </span>
+
+                    <h2>
+                        ชื่อกิจกรรม :
+                        <span>ชื่อกิจกรรมที่ 6</span>
+                    </h2>
+
+                    <p>
+                        เขียนรายละเอียดเกี่ยวกับกิจกรรมที่ 6
+                        และบอกความประทับใจหรือสิ่งที่ได้เรียนรู้
+                        จากการเข้าร่วมกิจกรรมนี้
+                    </p>
+
+                    <div class="work-info">
+
+                        <div class="work-info-item">
+                            <strong>📅 วันที่ :</strong>
+                            ใส่วันที่
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            📸 Portfolio
+                        </span>
+
+                        <span class="tag">
+                            ✨ Activity
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -669,9 +916,9 @@
         <div class="work-message">
 
             <p>
-                ทุกผลงานคือประสบการณ์ที่ทำให้ฉันได้เรียนรู้
-                และพัฒนาตัวเองให้ดีขึ้นเรื่อย ๆ
-                🌱📸
+                ทุกกิจกรรมคือประสบการณ์ที่ทำให้ฉันได้เรียนรู้
+                พัฒนาทักษะ และค้นพบความสามารถของตัวเอง
+                มากขึ้นเรื่อย ๆ 🌱📸✨
             </p>
 
         </div>
@@ -692,9 +939,7 @@
 
         </div>
 
-
     </section>
-
 
 </body>
 </html>
